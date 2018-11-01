@@ -1,0 +1,10 @@
+.classpath
+.project
+build/
+META-INF/
+bin/
+config/newrelic.json
+config/plugin.json
+logs/
+.idea/
+out/

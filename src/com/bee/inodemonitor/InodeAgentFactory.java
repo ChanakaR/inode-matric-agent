@@ -9,6 +9,14 @@ import java.util.Map;
 public class InodeAgentFactory extends AgentFactory {
     @Override
     public Agent createConfiguredAgent(Map<String, Object> map) throws ConfigurationException {
-        return null;
+        String name = (String) map.get("name");
+        String hostname = (String) map.get("hostname");
+        String partitions = (String) map.get("partitions");
+
+        if (name == null) {
+            throw new ConfigurationException("'name' cannot be null. Do you have a 'config/plugin.json' file?");
+        }
+
+        return new InodeAgent(name);
     }
 }
